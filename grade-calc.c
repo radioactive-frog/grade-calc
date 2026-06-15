@@ -5,35 +5,21 @@ int main(){
 	printf("enter your number of classes: ");
 	scanf("%d", &numOfClasses);
 
-	printf("\nenter grades in format: xx.xxtype\nenter clas type in format: \nregular - r\nhonors - h\nap - a\ncollage course - c\n\n");
+	printf("\nenter grades in format: xx.xx type\nenter class type in format: \nregular - r\nhonors - h\nap - a\ncollage course - c\n\n");
 
 	float gradeUnweighted;
 	float gradeWeighted;
 
 	for(int i = 0; i < numOfClasses; i++){
-		//fflush(stdin);
-		
-		//printf("enter grade %d: ", i + 1);
-		//float grade = scanf("%f", &grade);
-
-		//gradeUnweighted += ((grade/20)-1);
-		
-		////fflush(stdin);
-		//printf("enter type %d: ", i + 1);
-		////fflush(stdin);
-		//char type = scanf("%c", &type);
-		//printf("\n");
-		////fflush(stdin);
-		
-		//printf("\n");
-		fflush(stdin);
-		printf("enter grade %d & type: ", i + 1);
 		float grade;
-		char type;
-		fflush(stdin);
-		scanf("%f%d ", &grade, &type);
-		//printf("\n");
-		fflush(stdin);
+		char type;		
+		
+		printf("enter grade %d & type: ", i + 1);
+		//fflush(stdin);
+		scanf(" %f %c", &grade, &type);
+		getchar();
+		//fflush(stdin);	
+		gradeUnweighted += ((grade/20)-1);
 
 		switch (type){
 			case 'r':
@@ -51,11 +37,10 @@ int main(){
 		}
 	}
 
-	gradeUnweighted /= numOfClasses;
-	gradeWeighted /= numOfClasses;
+	gradeUnweighted = gradeUnweighted / numOfClasses;
+	gradeWeighted = gradeWeighted / numOfClasses;
 
-	printf("\nunweighted gpa: %f", gradeUnweighted);
-	printf("\nweighted gpa: %f\n", gradeWeighted);
+	printf("\nunweighted gpa: %f\tweighted gpa: %f\n", gradeUnweighted, gradeWeighted);
 
 	return 0;
 }
