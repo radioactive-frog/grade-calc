@@ -15,11 +15,12 @@ int main(){
 		char type;		
 		
 		printf("enter grade %d & type: ", i + 1);
-		//fflush(stdin);
 		scanf(" %f %c", &grade, &type);
 		getchar();
-		//fflush(stdin);	
-		gradeUnweighted += ((grade/20)-1);
+
+		grade = ((grade/20)-1);
+
+		gradeUnweighted += grade;
 
 		switch (type){
 			case 'r':
